@@ -8,7 +8,7 @@
     "Outputs": {
         "BucketName": {
             "Value": {
-                "Ref": "S3bucket-plmlab"
+                "Ref": "S3bucket"
             },
             "Description": "Name of the sample Amazon S3 bucket."
         }
