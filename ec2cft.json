@@ -32,9 +32,9 @@
             "SecurityGroupIds" : [ 
                 { "Fn::GetAtt" : [ "SecurityGroupCloudFormation", "GroupId" ] }
               ],
-           "AvailabilityZone": "us-east-1a",        
+           "AvailabilityZone": "ap-south-1",        
            "ImageId": "ami-02185940fb1e2cdb9",
-           "InstanceType": "t3a.xlarge",
+           "InstanceType": "t2.micro",
            "KeyName": "PLM",
            
            "BlockDeviceMappings" : [
@@ -45,7 +45,7 @@
                 "VolumeType" : "io1",
                 "Iops" : 200,
                 "DeleteOnTermination" : false,
-                "VolumeSize" : 30
+                "VolumeSize" : 10
                 }
                 }
             ]
