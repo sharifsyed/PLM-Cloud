@@ -1,0 +1,57 @@
+{
+    "Description": "Create an EC2 instance by AWS CloudFormation",
+     "Resources": {
+       "SecurityGroupCloudFormation": {
+         "Type": "AWS::EC2::SecurityGroup",
+         "Properties": {
+           "GroupName": "PLMSG",
+           "SecurityGroupIngress": [
+             {
+               "IpProtocol": "tcp",
+               "FromPort": 22,
+               "ToPort": 22,
+               "CidrIp": "0.0.0.0/0",
+               "Description": "For traffic from Internet"
+             },
+             {
+                "IpProtocol": "tcp",
+                "FromPort": 80,
+                "ToPort": 80,
+                "CidrIp": "0.0.0.0/0",
+                "Description": "For traffic from Internet"
+              }
+           ],
+           "GroupDescription": "Security Group for demo",
+           "VpcId": "vpc-7f029002"
+         }
+       },
+
+       "MyCloudFormationEC2Instance": {
+         "Type": "AWS::EC2::Instance",
+         "Properties": {
+            "SecurityGroupIds" : [ 
+                { "Fn::GetAtt" : [ "SecurityGroupCloudFormation", "GroupId" ] }
+              ],
+           "AvailabilityZone": "us-east-1a",        
+           "ImageId": "ami-02185940fb1e2cdb9",
+           "InstanceType": "t3a.xlarge",
+           "KeyName": "PLM",
+           
+           "BlockDeviceMappings" : [
+
+            {
+                "DeviceName" : "/dev/sdm",
+                "Ebs" : {
+                "VolumeType" : "io1",
+                "Iops" : 200,
+                "DeleteOnTermination" : false,
+                "VolumeSize" : 30
+                }
+                }
+            ]
+
+
+         }
+       }
+    }
+   }
