@@ -22,7 +22,7 @@
               }
            ],
            "GroupDescription": "Security Group for demo",
-           "VpcId": "vpc-cf609ab2"
+           "VpcId": "vpc-cc25e4a7"
          }
        },
 
