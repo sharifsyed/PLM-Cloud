@@ -4,8 +4,8 @@
     "Description" : "AWS CloudFormation Sample Template LAMP_Multi_AZ: Create a highly available, scalable LAMP stack with an Amazon RDS database instance for the backend data store. This template demonstrates using the AWS CloudFormation bootstrap scripts to install the packages and files necessary to deploy the Apache web server and PHP at instance launch time. **WARNING** This template creates one or more Amazon EC2 instances, an Application Load Balancer and an Amazon RDS DB instance. You will be billed for the AWS resources used if you create a stack from this template.",
   
     "Parameters" : {
-      "VpcId" : {
-        "Type" : "AWS::EC2::VPC::vpc-7f029002",
+      "vpc-7f029002" : {
+        "Type" : "AWS::EC2::VPC::Id",
         "Description" : "VpcId of your existing Virtual Private Cloud (VPC)",
         "ConstraintDescription" : "must be the VPC Id of an existing Virtual Private Cloud."
       },
@@ -16,9 +16,9 @@
         "ConstraintDescription" : "must be a list of at least two existing subnets associated with at least two different availability zones. They should be residing in the selected Virtual Private Cloud."
       },
   
-      "KeyName": {
+      "awsplm": {
         "Description" : "Name of an existing EC2 KeyPair to enable SSH access to the instances",
-        "Type": "AWS::EC2::KeyPair::awsplm",
+        "Type": "AWS::EC2::KeyPair::KeyName",
         "ConstraintDescription" : "must be the name of an existing EC2 KeyPair."
       },
   
