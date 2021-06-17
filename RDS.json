@@ -5,7 +5,7 @@
   
     "Parameters" : {
       "VpcId" : {
-        "Type" : "AWS::EC2::VPC::Id",
+        "Type" : "AWS::EC2::VPC::vpc-7f029002",
         "Description" : "VpcId of your existing Virtual Private Cloud (VPC)",
         "ConstraintDescription" : "must be the VPC Id of an existing Virtual Private Cloud."
       },
@@ -18,7 +18,7 @@
   
       "KeyName": {
         "Description" : "Name of an existing EC2 KeyPair to enable SSH access to the instances",
-        "Type": "AWS::EC2::KeyPair::KeyName",
+        "Type": "AWS::EC2::KeyPair::awsplm",
         "ConstraintDescription" : "must be the name of an existing EC2 KeyPair."
       },
   
